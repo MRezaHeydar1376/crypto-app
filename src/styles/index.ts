@@ -56,7 +56,7 @@ export const H6 = styled.h6<PropsText>`
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: Roboto;
 `
-export const Paragraf = styled.p<PropsText>`
+export const Paragraph = styled.p<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
     color: ${({ color = "black" }) => (color ? color : "black")};
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};

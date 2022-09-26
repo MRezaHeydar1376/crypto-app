@@ -1,7 +1,6 @@
-import React, { Fragment, useCallback, useState } from 'react';
-import ReactDOM from 'react-dom';
+import { useCallback, useState } from 'react';
 import { memo, ReactElement } from "react";
-import { Div, H6, Paragraf } from "../Global/style";
+import { Div, H6, Paragraph } from '../../styles';
 
 export type ITEM = {
     text: string;
@@ -31,17 +30,17 @@ function ButtonDropDown({ icon, title, items }: Props): ReactElement {
             <button onClick={openDropdown}>
                 {icon ? (
                     <img src={icon} alt="" />
-                ) : (null)}
+                ) : null}
                 <H6>
                     {title}
                 </H6>
             </button>
             <Div>
-                {items?.map(item => (
-                    <Fragment key={item.id}>
-                        Ahmad
-                    </Fragment>
-                ))}
+                {items ? items.map(item => (
+                    <Paragraph key={item.id}>
+                        {item.text}
+                    </Paragraph>
+                )) : null}
             </Div>
         </Div>
     )

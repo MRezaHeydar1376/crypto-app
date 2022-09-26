@@ -1,9 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import { Brand, FlagIran } from "../../assets";
 import { ButtonDropDown } from "../../components";
 import { ITEM } from '../../components/button_dropdown';
-import { Div } from '../../components/Global/style';
+import { Div } from "../../styles";
 
 const Items = [
     {text: "Persian", id: "1"},
