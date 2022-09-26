@@ -1,10 +1,16 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ReactElement } from 'react';
+import TopNavbar from './layout/TopNavbar';
 import Home from './pages/Home/home';
+import { Div } from './components/Global/style';
 
-function App() {
+function App(): ReactElement {
   return (
-    <div>
-      <Home/>
-    </div>
+    <Div>
+      <TopNavbar />
+      <Home />
+    </Div>
   );
 }
 
