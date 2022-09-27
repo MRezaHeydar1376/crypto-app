@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { memo, ReactElement } from "react";
-import { Button, Div, H6, Img, Paragraph } from '../../styles';
+import { Border, Button, Div, H6, Img, Paragraph } from '../../styles';
 
 export type ITEM = {
     text: string;
@@ -74,17 +74,24 @@ function ButtonDropDown({ icon, title, items, selectItem }: Props): ReactElement
                     display="flex"
                     align="ccenter"
                     direction="column"
+                    backgroundColor="gray"
                 >
                     {items ? items.map(item => (
-                        <Paragraph
+                        <Button
                             key={item.id}
                             onClick={() => selectLanguage(item.id)}
-                            margin="10px auto"
-                            fontSize="12px"
-                            cursor="pointer"
+                            width="100%"
+                            border="0px"
                         >
-                            {item.text}
-                        </Paragraph>
+                            <Paragraph
+                                margin="10px auto"
+                                fontSize="12px"
+                                cursor="pointer"
+                            >
+                                {item.text}
+                            </Paragraph>
+                            <Border width="100%" height="1px" />
+                        </Button>
                     )) : null}
                 </Div> :
                 null
