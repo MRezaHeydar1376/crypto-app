@@ -1,24 +1,35 @@
-import { Brand, FlagIran } from "../../assets";
+import { useState } from "react";
+import { Brand, FlagIran, FlagUsa } from "../../assets";
 import { ButtonDropDown } from "../../components";
-import { ITEM } from '../../components/button_dropdown';
 import { Div } from "../../styles";
 
 const Items = [
-    {text: "Persian", id: "1"},
-    {text: "English", id: "2"}
+    { text: "English", id: "1" },
+    { text: "فارسی", id: "2" },
 ]
 
 function TopNavbar() {
+    const [icon, setIcon] = useState(FlagUsa);
+
+    function selectItem(text: string, id: string) {
+        if(id === "1") {
+            setIcon(FlagUsa)
+        } else {
+            setIcon(FlagIran)
+        }
+    }
+
     return (
-        <Div display="flex" align="center">
-            <Div size="20%" display="flex" justify="start">
+        <Div display="flex" justify="space-between" align="center">
+            <Div width="20%" display="flex" justify="start">
                 <img src={Brand} alt="" />
             </Div>
-            <Div size="80%" display="flex" justify="end">
+            <Div width="80%" display="flex" justify="end">
                 <ButtonDropDown
                     title="Language"
-                    icon={FlagIran}
+                    icon={icon}
                     items={Items}
+                    selectItem={selectItem}
                 />
             </Div>
         </Div>
