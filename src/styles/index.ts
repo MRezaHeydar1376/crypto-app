@@ -9,6 +9,7 @@ interface PropsDiv {
     position?: string;
     top?: string;
     left?: string;
+    backgroundColor?: string;
 }
 
 interface PropsText {
@@ -25,7 +26,6 @@ interface PropsImg {
     height?: string;
 }
 
-
 interface PropsButton {
     width?: string;
     height?: string;
@@ -35,6 +35,13 @@ interface PropsButton {
     align?: string;
     border?: string;
     borderRadius?: string;
+}
+
+interface PropsBorder {
+    width?: string;
+    height?: string;
+    color?: string;
+    margin?: string;
 }
 
 export const Button = styled.button<PropsButton>`
@@ -57,6 +64,7 @@ export const Div = styled.div<PropsDiv>`
     flex-direction: ${({ direction = "row" }) => (direction ? direction : "row")};
     position: ${({ position = "block" }) => (position ? position : "row")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
+    background-color: ${({ backgroundColor = "transparent" }) => (backgroundColor ? backgroundColor : "transparent")};
 `
 
 export const H1 = styled.h1<PropsText>`
@@ -65,7 +73,7 @@ export const H1 = styled.h1<PropsText>`
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
-    cursor: ${({ cursor= "auto"}) => (cursor? cursor: "auto")};
+    cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
 `
 export const H2 = styled.h2<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -73,7 +81,7 @@ export const H2 = styled.h2<PropsText>`
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
-    cursor: ${({ cursor= "auto"}) => (cursor? cursor: "auto")};
+    cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
 `
 export const H3 = styled.h3<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -81,7 +89,7 @@ export const H3 = styled.h3<PropsText>`
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
-    cursor: ${({ cursor= "auto"}) => (cursor? cursor: "auto")};
+    cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
 `
 export const H4 = styled.h4<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -89,7 +97,7 @@ export const H4 = styled.h4<PropsText>`
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
-    cursor: ${({ cursor= "auto"}) => (cursor? cursor: "auto")};
+    cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
 `
 export const H5 = styled.h5<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -97,7 +105,7 @@ export const H5 = styled.h5<PropsText>`
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
-    cursor: ${({ cursor= "auto"}) => (cursor? cursor: "auto")};
+    cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
 `
 export const H6 = styled.h6<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -105,7 +113,7 @@ export const H6 = styled.h6<PropsText>`
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
-    cursor: ${({ cursor= "auto"}) => (cursor? cursor: "auto")};
+    cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
 `
 export const Paragraph = styled.p<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -113,10 +121,17 @@ export const Paragraph = styled.p<PropsText>`
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
-    cursor: ${({ cursor= "auto"}) => (cursor? cursor: "auto")};
+    cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
 `
 export const Img = styled.img<PropsImg>`
     border-radius: ${({ borderRadius = "0%" }) => (borderRadius ? borderRadius : "0%")};
     width: ${({ width = "100%" }) => (width ? width : "100%")};
     height: ${({ height = "auto" }) => (height ? height : "auto")};
+`
+export const Border = styled.hr<PropsBorder>`
+    width: ${({ width = "100%" }) => (width ? width : "100%")};
+    height: ${({ height = "auto" }) => (height ? height : "auto")};
+    background-color: ${({ color = "black" }) => (color ? color : "black")};
+    margin: ${({ margin = "0px" }) => (margin ? margin : "0px")};
+    padding: 0px;
 `
