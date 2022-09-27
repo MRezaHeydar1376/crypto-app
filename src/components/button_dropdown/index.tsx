@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, MouseEvent } from 'react';
 import { memo, ReactElement } from "react";
 import { Border, Button, Div, H6, Img, Paragraph } from '../../styles';
 
@@ -15,7 +15,8 @@ interface Props {
 }
 
 function ButtonDropDown({ icon, title, items, selectItem }: Props): ReactElement {
-
+    
+    const wrapperRef: any = useRef(null);
     const [dropdown, setDropdown] = useState(false);
     const [language, setLanguage] = useState("English");
 
@@ -39,6 +40,18 @@ function ButtonDropDown({ icon, title, items, selectItem }: Props): ReactElement
         }
     };
 
+    useEffect(() => {
+        function handleClickOutside(event: any) {
+            if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+                setDropdown(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [wrapperRef]);
+
     return (
         <Div
             display="flex"
@@ -46,6 +59,7 @@ function ButtonDropDown({ icon, title, items, selectItem }: Props): ReactElement
             direction="column"
             position="relative"
             width="10%"
+            ref={wrapperRef}
         >
             <Button
                 onClick={openDropdown}
@@ -101,3 +115,4 @@ function ButtonDropDown({ icon, title, items, selectItem }: Props): ReactElement
 }
 
 export default memo(ButtonDropDown);
+
