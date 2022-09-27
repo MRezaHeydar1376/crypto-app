@@ -55,7 +55,6 @@ export const Button = styled.button<PropsButton>`
     border-radius: ${({ borderRadius = "1px solid black" }) => (borderRadius ? borderRadius : "1px solid black")};
     cursor: pointer;
 `
-
 export const Div = styled.div<PropsDiv>`
     width: ${({ width = "100%" }) => (width ? width : "100%")};
     display: ${({ display = "block" }) => (display ? display : "block")};
@@ -66,7 +65,6 @@ export const Div = styled.div<PropsDiv>`
     top: ${({ top = "0px" }) => (top ? top : "0px")};
     background-color: ${({ backgroundColor = "transparent" }) => (backgroundColor ? backgroundColor : "transparent")};
 `
-
 export const H1 = styled.h1<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
     color: ${({ color = "black" }) => (color ? color : "black")};
