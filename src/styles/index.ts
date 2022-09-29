@@ -18,12 +18,18 @@ interface PropsText {
     fontWeight?: string;
     margin?: string;
     cursor?: string;
+    position?: string;
+    top?: string;
+    left?: string;
 }
 
 interface PropsImg {
     borderRadius?: string;
     width?: string;
     height?: string;
+    position?: string;
+    top?: string;
+    left?: string;
 }
 
 interface PropsButton {
@@ -42,6 +48,15 @@ interface PropsBorder {
     height?: string;
     color?: string;
     margin?: string;
+}
+
+interface PropsInput {
+    width?: string;
+    height?: string;
+    backgroundColor?: string;
+    padding?: string;
+    border?: string;
+    borderRadius?: string;
 }
 
 export const Button = styled.button<PropsButton>`
@@ -72,6 +87,9 @@ export const H1 = styled.h1<PropsText>`
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
     cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
+    position: ${({ position = "block" }) => (position ? position : "block")};
+    top: ${({ top = "0px" }) => (top ? top : "0px")};
+    left: ${({ left = "0px" }) => (left ? left : "0px")};
 `
 export const H2 = styled.h2<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -80,6 +98,9 @@ export const H2 = styled.h2<PropsText>`
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
     cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
+    position: ${({ position = "block" }) => (position ? position : "block")};
+    top: ${({ top = "0px" }) => (top ? top : "0px")};
+    left: ${({ left = "0px" }) => (left ? left : "0px")};
 `
 export const H3 = styled.h3<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -88,6 +109,9 @@ export const H3 = styled.h3<PropsText>`
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
     cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
+    position: ${({ position = "block" }) => (position ? position : "block")};
+    top: ${({ top = "0px" }) => (top ? top : "0px")};
+    left: ${({ left = "0px" }) => (left ? left : "0px")};
 `
 export const H4 = styled.h4<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -96,6 +120,9 @@ export const H4 = styled.h4<PropsText>`
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
     cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
+    position: ${({ position = "block" }) => (position ? position : "block")};
+    top: ${({ top = "0px" }) => (top ? top : "0px")};
+    left: ${({ left = "0px" }) => (left ? left : "0px")};
 `
 export const H5 = styled.h5<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -104,6 +131,9 @@ export const H5 = styled.h5<PropsText>`
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
     cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
+    position: ${({ position = "block" }) => (position ? position : "block")};
+    top: ${({ top = "0px" }) => (top ? top : "0px")};
+    left: ${({ left = "0px" }) => (left ? left : "0px")};
 `
 export const H6 = styled.h6<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -112,6 +142,9 @@ export const H6 = styled.h6<PropsText>`
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
     cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
+    position: ${({ position = "block" }) => (position ? position : "block")};
+    top: ${({ top = "0px" }) => (top ? top : "0px")};
+    left: ${({ left = "0px" }) => (left ? left : "0px")};
 `
 export const Paragraph = styled.p<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -120,11 +153,17 @@ export const Paragraph = styled.p<PropsText>`
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
     cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
+    position: ${({ position = "block" }) => (position ? position : "block")};
+    top: ${({ top = "0px" }) => (top ? top : "0px")};
+    left: ${({ left = "0px" }) => (left ? left : "0px")};
 `
 export const Img = styled.img<PropsImg>`
     border-radius: ${({ borderRadius = "0%" }) => (borderRadius ? borderRadius : "0%")};
     width: ${({ width = "100%" }) => (width ? width : "100%")};
     height: ${({ height = "auto" }) => (height ? height : "auto")};
+    position: ${({ position = "block" }) => (position ? position : "block")};
+    top: ${({ top = "0px" }) => (top ? top : "0px")};
+    left: ${({ left = "0px" }) => (left ? left : "0px")};
 `
 export const Border = styled.hr<PropsBorder>`
     width: ${({ width = "100%" }) => (width ? width : "100%")};
@@ -132,4 +171,24 @@ export const Border = styled.hr<PropsBorder>`
     background-color: ${({ color = "black" }) => (color ? color : "black")};
     margin: ${({ margin = "0px" }) => (margin ? margin : "0px")};
     padding: 0px;
+`
+
+export const Input = styled.input<PropsInput>`
+    width: ${({ width = "100%" }) => (width ? width : "100%")};
+    height: ${({ height = "auto" }) => (height ? height : "auto")};
+    background-color: ${({ backgroundColor = "tranparent" }) => (backgroundColor ? backgroundColor : "tranparent")};
+    padding: ${({ padding = "0px" }) => (padding ? padding : "0px")};
+    border: ${({ border = "0.5px solid black" }) => (border ? border : "0.5px solid black")};
+    border-radius: ${({ borderRadius = "0px" }) => (borderRadius ? borderRadius : "0px")};
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    &::placeholder {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 500;
+        padding: 0 30px;
+    }
+    &:focus {
+        outline: none;
+    }
 `
