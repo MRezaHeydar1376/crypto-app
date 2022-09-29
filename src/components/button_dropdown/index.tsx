@@ -24,10 +24,6 @@ function ButtonDropDown({ icon, title, items, selectItem }: Props): ReactElement
         setDropdown(!dropdown);
     }, [dropdown]);
 
-    const closeDropdown = () => {
-        setDropdown(false);
-    };
-
     const selectLanguage = (id: string) => {
         if (id === "1") {
             setLanguage("English")
