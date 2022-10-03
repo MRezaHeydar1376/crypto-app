@@ -1,7 +1,9 @@
 import styled from "@emotion/styled/macro";
+import { Color } from "../variable";
 
 interface PropsDiv {
     width?: string;
+    height?: string;
     display?: string;
     justify?: string;
     align?: string;
@@ -10,6 +12,12 @@ interface PropsDiv {
     top?: string;
     left?: string;
     backgroundColor?: string;
+    boxShadow?: string;
+    borderRadius?: string;
+    padding?: string;
+    overflowY?: string;
+    overflowX?: string;
+    margin?: string;
 }
 
 interface PropsText {
@@ -72,17 +80,39 @@ export const Button = styled.button<PropsButton>`
 `
 export const Div = styled.div<PropsDiv>`
     width: ${({ width = "100%" }) => (width ? width : "100%")};
+    height: ${({ height = "auto" }) => (height ? height : "auto")};
     display: ${({ display = "block" }) => (display ? display : "block")};
     justify-content: ${({ justify = "start" }) => (justify ? justify : "start")};
     align-items: ${({ align = "flex-start" }) => (align ? align : "flex-start")};
     flex-direction: ${({ direction = "row" }) => (direction ? direction : "row")};
     position: ${({ position = "block" }) => (position ? position : "row")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
+    padding: ${({ padding = "0px" }) => (padding ? padding : "0px")};
     background-color: ${({ backgroundColor = "transparent" }) => (backgroundColor ? backgroundColor : "transparent")};
+    box-shadow: ${({ boxShadow = "none" }) => (boxShadow ? boxShadow : "none")};
+    border-radius: ${({ borderRadius = "0px" }) => (borderRadius ? borderRadius : "0px")};
+    margin: ${({ margin = "0px" }) => (margin ? margin : "0px")};
+    overflow-y: ${({ overflowY = "visible" }) => (overflowY ? overflowY : "visible")};
+    overflow-x: ${({ overflowX = "visible" }) => (overflowX ? overflowX : "visible")};
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 8px !important;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        width: 10px;
+        height: 140px;
+
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #b49dd8;
+        border-radius: 50px;
+        height: 1px;
+    }
 `
 export const H1 = styled.h1<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
-    color: ${({ color = "black" }) => (color ? color : "black")};
+    color: ${({ color = Color.black }) => (color ? color : Color.black)};
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
@@ -93,7 +123,7 @@ export const H1 = styled.h1<PropsText>`
 `
 export const H2 = styled.h2<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
-    color: ${({ color = "black" }) => (color ? color : "black")};
+    color: ${({ color = Color.black }) => (color ? color : Color.black)};
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
@@ -104,7 +134,7 @@ export const H2 = styled.h2<PropsText>`
 `
 export const H3 = styled.h3<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
-    color: ${({ color = "black" }) => (color ? color : "black")};
+    color: ${({ color = Color.black }) => (color ? color : Color.black)};
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
@@ -115,7 +145,7 @@ export const H3 = styled.h3<PropsText>`
 `
 export const H4 = styled.h4<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
-    color: ${({ color = "black" }) => (color ? color : "black")};
+    color: ${({ color = Color.black }) => (color ? color : Color.black)};
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
@@ -126,7 +156,7 @@ export const H4 = styled.h4<PropsText>`
 `
 export const H5 = styled.h5<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
-    color: ${({ color = "black" }) => (color ? color : "black")};
+    color: ${({ color = Color.black }) => (color ? color : Color.black)};
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
@@ -137,7 +167,7 @@ export const H5 = styled.h5<PropsText>`
 `
 export const H6 = styled.h6<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
-    color: ${({ color = "black" }) => (color ? color : "black")};
+    color: ${({ color = Color.black }) => (color ? color : Color.black)};
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
@@ -148,7 +178,7 @@ export const H6 = styled.h6<PropsText>`
 `
 export const Paragraph = styled.p<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
-    color: ${({ color = "black" }) => (color ? color : "black")};
+    color: ${({ color = Color.black }) => (color ? color : Color.black)};
     font-weight: ${({ fontWeight = "500" }) => (fontWeight ? fontWeight : "500")};
     font-family: 'Roboto Condensed', sans-serif;
     margin: ${({ margin = "0" }) => (margin ? margin : "0")};
@@ -168,7 +198,7 @@ export const Img = styled.img<PropsImg>`
 export const Border = styled.hr<PropsBorder>`
     width: ${({ width = "100%" }) => (width ? width : "100%")};
     height: ${({ height = "auto" }) => (height ? height : "auto")};
-    background-color: ${({ color = "black" }) => (color ? color : "black")};
+    background-color: ${({ color = Color.black }) => (color ? color : Color.black)};
     margin: ${({ margin = "0px" }) => (margin ? margin : "0px")};
     padding: 0px;
 `
