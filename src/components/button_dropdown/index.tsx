@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, MouseEvent } from 'react';
 import { memo, ReactElement } from "react";
 import { Border, Button, Div, H6, Img, Paragraph } from '../../styles';
+import { Color } from '../../variable';
 
 export type ITEM = {
     text: string;
@@ -15,14 +16,14 @@ interface Props {
 }
 
 function ButtonDropDown({ icon, title, items, selectItem }: Props): ReactElement {
-    
     const wrapperRef: any = useRef(null);
     const [dropdown, setDropdown] = useState(false);
     const [language, setLanguage] = useState("English");
+    console.log(dropdown)
 
-    const openDropdown = useCallback(() => {
-        setDropdown(!dropdown);
-    }, [dropdown]);
+    const openDropdown = () => {
+        setDropdown(true);
+    };
 
     const selectLanguage = (id: string) => {
         if (id === "1") {
@@ -84,7 +85,7 @@ function ButtonDropDown({ icon, title, items, selectItem }: Props): ReactElement
                     display="flex"
                     align="ccenter"
                     direction="column"
-                    backgroundColor="gray"
+                    backgroundColor={Color.gray}
                 >
                     {items ? items.map(item => (
                         <Button
