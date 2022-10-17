@@ -37,7 +37,7 @@ function InputSearch() {
 
 
     return (
-        <Div position="relative" borderRadius="10px" height="200px">
+        <Div position="relative" borderRadius="10px">
             <Button
                 width="170px"
                 height="35px"
