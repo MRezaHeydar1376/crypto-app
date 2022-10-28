@@ -30,7 +30,7 @@ function TopNavbar() {
                         width="75%"
                     />
                 </Div>
-                <Div width="80%" display="flex" justify="end">
+                <Div width="80%" display="flex" justify="end" zIndex="2">
                     <ButtonDropDown
                         title="Language"
                         icon={icon}
