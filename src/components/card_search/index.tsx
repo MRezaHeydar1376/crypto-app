@@ -15,6 +15,7 @@ function CardSearch({ icon, name, rank }: Props): ReactElement {
             justify="space-between"
             align="center"
             margin="10px 0"
+            cursor="pointer"
         >
             <Div display="flex" justify="start" align="center">
                 <Img
