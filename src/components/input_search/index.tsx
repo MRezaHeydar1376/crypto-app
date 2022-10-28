@@ -75,6 +75,7 @@ function InputSearch() {
                     overflowX="hidden"
                     position="absolute"
                     top="0px"
+                    left="-16px"
                     ref={wrapperRef}
                 >
                     <Input
