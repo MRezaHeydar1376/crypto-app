@@ -209,7 +209,6 @@ export const Border = styled.hr<PropsBorder>`
     margin: ${({ margin = "0px" }) => (margin ? margin : "0px")};
     padding: 0px;
 `
-
 export const Input = styled.input<PropsInput>`
     width: ${({ width = "100%" }) => (width ? width : "100%")};
     height: ${({ height = "auto" }) => (height ? height : "auto")};
