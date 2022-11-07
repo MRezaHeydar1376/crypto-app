@@ -26,12 +26,13 @@ function Tab({ links }: Props) {
                     key={link.id}
                     width="20%"
                     height="40px"
-                    border="none"
+                    border="2px solid transparent"
+                    hoverBorder={`2px solid ${activeTab === link.id ? Color.green : Color.darkGray}`}
                     onClick={() => handleActiveTab(link.id)}
                 >
                     <H6
                         fontSize="14px"
-                        color={activeTab === link.id ? Color.green : Color.black}
+                        color={activeTab === link.id ? Color.green : Color.gray}
                         fontWeight="600"
                         cursor="pointer"
                     >
