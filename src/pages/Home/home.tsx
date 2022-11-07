@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { Tab } from "../../components";
+import { Tab, Table } from "../../components";
 import { Border, Div } from "../../styles";
 import { Color } from "../../variable";
 
@@ -33,7 +33,8 @@ function Home() {
             <Div width="60%">
                 <Tab links={Name_Tab} />
             </Div>
-            <Border height="0.1px" color={Color.gray}/>
+            <Border height="0.1px" color={Color.darkWhite} margin="-10px 0 20px 0"/>
+            <Table/>
         </Div>
     )
 }
