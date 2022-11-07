@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled/macro";
 import { Color } from "../variable";
 
@@ -32,6 +33,7 @@ interface PropsText {
     position?: string;
     top?: string;
     left?: string;
+    colorHover?: string;
 }
 
 interface PropsImg {
@@ -41,6 +43,7 @@ interface PropsImg {
     position?: string;
     top?: string;
     left?: string;
+    cursor?: string;
 }
 
 interface PropsButton {
@@ -52,6 +55,7 @@ interface PropsButton {
     align?: string;
     border?: string;
     borderRadius?: string;
+    hoverBorder?: string;
 }
 
 interface PropsBorder {
@@ -70,6 +74,26 @@ interface PropsInput {
     borderRadius?: string;
 }
 
+interface PropsUl {
+    width?: string;
+    height?: string;
+    display?: string;
+    justify?: string;
+    align?: string;
+    direction?: string;
+    border?: string;
+}
+
+interface PropsLi {
+    width?: string;
+    height?: string;
+    display?: string;
+    justify?: string;
+    align?: string;
+    direction?: string;
+    border?: string;
+}
+
 export const Button = styled.button<PropsButton>`
     width: ${({ width = "100%" }) => (width ? width : "100%")};
     height: ${({ height = "auto" }) => (height ? height : "auto")};
@@ -80,6 +104,9 @@ export const Button = styled.button<PropsButton>`
     border: ${({ border = "1px solid black" }) => (border ? border : "1px solid black")};
     border-radius: ${({ borderRadius = "1px solid black" }) => (borderRadius ? borderRadius : "1px solid black")};
     cursor: pointer;
+    &:hover {
+        border-bottom: ${({ hoverBorder = "none" }) => (hoverBorder ? hoverBorder : "none")};
+    }
 `
 export const Div = styled.div<PropsDiv>`
     width: ${({ width = "100%" }) => (width ? width : "100%")};
@@ -90,7 +117,7 @@ export const Div = styled.div<PropsDiv>`
     flex-direction: ${({ direction = "row" }) => (direction ? direction : "row")};
     position: ${({ position = "block" }) => (position ? position : "row")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
-    left: ${({ left = "none" }) => (left? left:"none")};
+    left: ${({ left = "none" }) => (left ? left : "none")};
     padding: ${({ padding = "0px" }) => (padding ? padding : "0px")};
     background-color: ${({ backgroundColor = "transparent" }) => (backgroundColor ? backgroundColor : "transparent")};
     box-shadow: ${({ boxShadow = "none" }) => (boxShadow ? boxShadow : "none")};
@@ -127,6 +154,9 @@ export const H1 = styled.h1<PropsText>`
     position: ${({ position = "block" }) => (position ? position : "block")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
     left: ${({ left = "0px" }) => (left ? left : "0px")};
+    &:hover{
+        color: ${({ colorHover = "none" }) => (colorHover ? colorHover : "none")};
+    }
 `
 export const H2 = styled.h2<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -138,6 +168,9 @@ export const H2 = styled.h2<PropsText>`
     position: ${({ position = "block" }) => (position ? position : "block")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
     left: ${({ left = "0px" }) => (left ? left : "0px")};
+    &:hover{
+        color: ${({ colorHover = "none" }) => (colorHover ? colorHover : "none")};
+    }
 `
 export const H3 = styled.h3<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -149,6 +182,9 @@ export const H3 = styled.h3<PropsText>`
     position: ${({ position = "block" }) => (position ? position : "block")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
     left: ${({ left = "0px" }) => (left ? left : "0px")};
+    &:hover{
+        color: ${({ colorHover = "none" }) => (colorHover ? colorHover : "none")};
+    }
 `
 export const H4 = styled.h4<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -160,6 +196,9 @@ export const H4 = styled.h4<PropsText>`
     position: ${({ position = "block" }) => (position ? position : "block")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
     left: ${({ left = "0px" }) => (left ? left : "0px")};
+    &:hover{
+        color: ${({ colorHover = "none" }) => (colorHover ? colorHover : "none")};
+    }
 `
 export const H5 = styled.h5<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -171,6 +210,9 @@ export const H5 = styled.h5<PropsText>`
     position: ${({ position = "block" }) => (position ? position : "block")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
     left: ${({ left = "0px" }) => (left ? left : "0px")};
+    &:hover{
+        color: ${({ colorHover = "none" }) => (colorHover ? colorHover : "none")};
+    }
 `
 export const H6 = styled.h6<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -182,6 +224,9 @@ export const H6 = styled.h6<PropsText>`
     position: ${({ position = "block" }) => (position ? position : "block")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
     left: ${({ left = "0px" }) => (left ? left : "0px")};
+    &:hover{
+        color: ${({ colorHover = "none" }) => (colorHover ? colorHover : "none")};
+    }
 `
 export const Paragraph = styled.p<PropsText>`
     font-size: ${({ fontSize = "auto" }) => (fontSize ? fontSize : "auto")};
@@ -193,6 +238,9 @@ export const Paragraph = styled.p<PropsText>`
     position: ${({ position = "block" }) => (position ? position : "block")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
     left: ${({ left = "0px" }) => (left ? left : "0px")};
+    &:hover{
+        color: ${({ colorHover = "none" }) => (colorHover ? colorHover : "none")};
+    }
 `
 export const Img = styled.img<PropsImg>`
     border-radius: ${({ borderRadius = "0%" }) => (borderRadius ? borderRadius : "0%")};
@@ -201,6 +249,7 @@ export const Img = styled.img<PropsImg>`
     position: ${({ position = "block" }) => (position ? position : "block")};
     top: ${({ top = "0px" }) => (top ? top : "0px")};
     left: ${({ left = "0px" }) => (left ? left : "0px")};
+    cursor: ${({ cursor = "auto" }) => (cursor ? cursor : "auto")};
 `
 export const Border = styled.hr<PropsBorder>`
     width: ${({ width = "100%" }) => (width ? width : "100%")};
@@ -227,4 +276,25 @@ export const Input = styled.input<PropsInput>`
     &:focus {
         outline: none;
     }
+`
+export const Ul = styled.ul<PropsUl>`
+    width: ${({ width = "100%" }) => (width ? width : "100%")};
+    height: ${({ height = "auto" }) => (height ? height : "auto")};
+    display: ${({ display = "block" }) => (display ? display : "block")};
+    justify-content: ${({ justify = "start" }) => (justify ? justify : "start")};
+    align-items: ${({ align = "flex-start" }) => (align ? align : "flex-start")};
+    flex-direction: ${({ direction = "row" }) => (direction ? direction : "row")};
+    border: ${({ border = "none" }) => (border ? border : "none")};
+    list-style: none;
+    padding: 0;
+`
+export const Li = styled.li<PropsLi>`
+    width: ${({ width = "100%" }) => (width ? width : "100%")};
+    height: ${({ height = "auto" }) => (height ? height : "auto")};
+    display: ${({ display = "block" }) => (display ? display : "block")};
+    justify-content: ${({ justify = "start" }) => (justify ? justify : "start")};
+    align-items: ${({ align = "flex-start" }) => (align ? align : "flex-start")};
+    flex-direction: ${({ direction = "row" }) => (direction ? direction : "row")};
+    border: ${({ border = "none" }) => (border ? border : "none")};
+    padding: 0;
 `
